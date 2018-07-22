@@ -1,3 +1,4 @@
+package br.ce.wcaquino.steps;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -5,13 +6,14 @@ import java.util.Date;
 
 import org.junit.Assert;
 
+import br.ce.wcaquino.converters.DateConverter;
 import cucumber.api.Transform;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 
 
-public class AprenderCucumber {
+public class AprenderCucumberSteps {
 	
 	@Dado("^que criei o arquivo corretamente$")
 	public void que_criei_o_arquivo_corretamente() throws Throwable {
