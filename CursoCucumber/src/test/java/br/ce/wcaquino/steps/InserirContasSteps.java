@@ -84,6 +84,12 @@ public class InserirContasSteps {
 		
 	}
 	
+	@Então("^recebo a mensagem \"([^\"]*)\"$")
+	public void receboAMensagem(String arg1) throws Throwable {
+	   String texto = driver.findElement(By.xpath("//div[starts-with(@class, 'alert alert-')]")).getText();
+	   Assert.assertEquals(arg1, texto);
+	}
+	
 	@Before
 	public void inicio() {	
 		System.out.println("Começando aqui.");	
