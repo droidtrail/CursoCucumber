@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
@@ -80,8 +82,16 @@ public class InserirContasSteps {
 	    String texto = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
 	    Assert.assertEquals("Já existe uma conta com esse nome!", texto);
 		
-		
-		
 	}
 	
+	@Before
+	public void inicio() {	
+		System.out.println("Começando aqui.");	
+	}
+	
+	@After
+	public void fecharBrowser() {
+		driver.quit();
+		System.out.println("Terminando");
+	}	
 }
