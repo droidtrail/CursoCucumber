@@ -5,11 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
-
 
 public class InserirContasSteps {
 	
@@ -18,7 +16,7 @@ public class InserirContasSteps {
 	@Dado("^que estou acessando a aplicação$")
 	public void queEstouAcessandoAAplicação() throws Throwable {
 	    System.setProperty("webdriver.chrome.driver", 
-	    		"C:\\Users\\Leandro Pereira\\Downloads\\chromedriver2_41\\chromedriver.exe");
+	    "C:\\Users\\Leandro Pereira\\Downloads\\chromedriver2_41\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get("http://srbarriga.herokuapp.com/login");
 		driver.manage().window().maximize();
@@ -70,6 +68,11 @@ public class InserirContasSteps {
 		String texto = driver.findElement(By.xpath("//div[@class='alert alert-success']")).getText();
 	    Assert.assertEquals("Conta adicionada com sucesso!", texto);
 	}
-
+	
+	@Então("^sou notificado que o nome da conta é obrigatório$")
+	public void souNotificadoQueONomeDaContaÉObrigatório() throws Throwable {
+	    String texto = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
+	    Assert.assertEquals("Informe o nome da conta", texto);
+	}
 	
 }

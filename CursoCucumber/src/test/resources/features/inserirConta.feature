@@ -5,6 +5,7 @@ Como um usuário
 Gostaria de cadastrar contas
 Para que eu possa distribuir meu dinheiro de uma forma mais organizada
 
+@ignore
 Cenário: Deve inserir uma conta com sucesso
 	Dado que estou acessando a aplicação
 	Quando informo o usuário "teste123@gmail.com"
@@ -17,17 +18,16 @@ Cenário: Deve inserir uma conta com sucesso
 	E seleciono Salvar
 	Então a conta é inserida com sucesso
 
-@ignore
 Cenário: Não deve inserir uma conta sem nome
 	Dado que estou acessando a aplicação
-	Quando informo o usuário "a@a"
-	E a senha "a"
+	Quando informo o usuário "teste123@gmail.com"
+	E a senha "123"
 	E seleciono entrar
 	Então visualizo a página inicial
 	Quando seleciono Contas
 	E seleciono Adicionar
 	E seleciono Salvar
-	Então sou notificar que o nome da conta é obrigatório
+	Então sou notificado que o nome da conta é obrigatório
 
 @ignore
 Cenário: Não deve inserir uma conta com nome já existente 
