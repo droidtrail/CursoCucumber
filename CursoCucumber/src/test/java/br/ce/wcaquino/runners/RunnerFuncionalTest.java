@@ -33,6 +33,7 @@ public class RunnerFuncionalTest {
 		driver.findElement(By.tagName("button")).click();
 		driver.findElement(By.linkText("reset")).click();
 		driver.findElement(By.linkText("Sair")).click();
+		
 		driver.quit();	
 	}	
 }
