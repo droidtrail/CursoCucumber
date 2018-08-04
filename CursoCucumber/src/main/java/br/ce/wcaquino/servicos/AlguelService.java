@@ -32,7 +32,7 @@ public class AlguelService {
 				    break;
 			}
 		
-		nota.setDataEntrega(DateUtils.obterDataDiferencaDias(1));
+		//nota.setDataEntrega(DateUtils.obterDataDiferencaDias(1));
 		filme.setEstoque(filme.getEstoque() - 1);
 		return nota;
 	}
